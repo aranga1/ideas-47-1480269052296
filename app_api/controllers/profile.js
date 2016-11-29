@@ -38,11 +38,13 @@ module.exports.add_idea = function(req, res) {
           idea.ideaDescription = req.body.ideaDescription;
           user.ideas.push(idea);
           console.log(user.ideas);
-          user.save(function(err) {
+          user.save(function(err, result) {
             if (err) {
               console.log(err);
             }
             else {
+              //res.status(200).json(result);
+              //res.json(result);
               res.redirect('/profile');
             }
           });
