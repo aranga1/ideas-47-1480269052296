@@ -18,7 +18,7 @@
         console.log(e);
       });
 
-    vm.logout = function () {
+    /*vm.logout = function () {
       console.log("logout pressed");
       authentication
         .logout()
@@ -28,7 +28,7 @@
         .then(function(){
           $location.path('/');
         });
-    };
+    };*/
   }
 
 })();

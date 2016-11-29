@@ -16,4 +16,9 @@ router.get('/profile', auth, ctrlProfile.profileRead);
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 
+router.get('/logout', function(req, res) {
+    req.logOut();
+    res.redirect('/');
+});
+
 module.exports = router;
