@@ -1,6 +1,6 @@
 <navigation></navigation>
 
-<div class="container" ng-controller="profileCtrl">
+<div class="container">
   <div class="row" >
     
      <div class="col-md-6">
@@ -22,6 +22,11 @@
       </form>
       <button onclick="logout()" class="btn btn-default">Logout</button>
     </div>
+    <form action="/api/pushIdea" method="post">
+          <input type="text" placeholder="Idea name" ng-model="ideaName"></input>
+          <input type="text" placeholder="Idea Description" ng-model="ideaDescription"></input>
+          <button type="submit" class="btn btn-warning btn-lg">Add</button>
+    </form> 
 
     <script type="text/javascript">
       function logout() {
