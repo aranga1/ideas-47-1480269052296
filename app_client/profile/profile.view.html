@@ -1,12 +1,11 @@
 <navigation></navigation>
 
 <div class="container">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Rock Salt">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Julee">
   <div class="row" >
-    
-     <div class="col-md-6">
-
-      <h1 class="form-signin-heading">Your profile</h1>
-
+     <div class="col-md-6"><br><br>
+      <h1>Eureka!</h1><br><br>
       <form  class="form-horizontal">
         <div class="form-group">
           <label class="col-sm-3 control-label">Full name</label>
@@ -24,12 +23,6 @@
       </form>
       <a onclick="logout()" href="/logout" class="btn btn-default btn-sm">Logout</a>
     </div>
-    <!--form ng-submit="vm.addIdea()">
-          <input type="text" placeholder="Idea name" ng-model="vm.idea.ideaName"></input>
-          <input type="text" placeholder="Idea Description" ng-model="vm.idea.ideaDescription"></input>
-          <button type="submit" class="btn btn-warning btn-lg">Add</button>
-    </form>--> 
-
     <form action="/api/pushIdea" method="post">
         <div class="form-group">
           <label for="name">Idea Name</label>
@@ -57,6 +50,28 @@
         console.log("reached this logout");
       }
     </script>
-
+    <style>
+        body {
+          overflow: hidden;
+          background-color: #FFBB00;
+          font-family: 'Rock Salt';
+        } 
+        h1 {
+          text-align: center;
+          color: #000000;
+          font-size: 80px;
+        }
+        #reg {
+          text-decoration: none;
+        }
+        #regular {
+          font-size: 35px;
+          font-family:'Julee';
+        }
+        #signIn {
+          width: 1100px;
+          margin: 0 auto;
+        }
+      </style>
   </div>
 </div>

@@ -1,26 +1,72 @@
 <navigation></navigation>
 
-<div class="container">
-
+<div class="container" id="register">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Rock Salt">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Julee">
   <div class="row">
-    <div class="col-md-6">
-      <h1>Register</h1>
-      <p class="lead">Already a member? Please <a href="login">log in</a> instead.</p>
+    <div class="col-md-6"><br><br>
+      <h1>Register</h1><br><br>
+      <p>Already a member? Please <a id ="reg" href="login">log in</a> instead</p><br><br>
       <form ng-submit="vm.onSubmit()">
-        <div class="form-group">
+        <div class="form-group" id="regular">
           <label for="name">Full name</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter your name" ng-model="vm.credentials.name">
+          <input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="vm.credentials.name">
         </div>
-        <div class="form-group">
+        <div class="form-group" id="regular">
           <label for="email">Email address</label>
           <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="vm.credentials.email">
         </div>
-        <div class="form-group">
+        <div class="form-group" id="regular">
           <label for="password">Password</label>
           <input type="password" class="form-control" id="password" placeholder="Password" ng-model="vm.credentials.password">
-        </div>
-        <button type="submit" class="btn btn-default">Register!</button>
+        </div><br>
+        <button type="submit" class="btn btn-default btn-xl">Register</button>
       </form>
+      <style>
+        body {
+          overflow: hidden;
+          background-color: #FFBB00;
+          font-family: 'Rock Salt';
+        } 
+        h1 {
+          text-align: center;
+          color: #000000;
+          font-size: 80px;
+
+        }
+        p {
+          text-align: center;
+          color: #888888;
+          font-family:'Julee';
+          font-size: 35px;
+        }
+        #reg {
+          text-decoration: none;
+        }
+        #regular {
+          font-size: 35px;
+          font-family:'Julee';
+        }
+        .button {
+          background-color: transparent;
+          text-decoration: none;
+          border: none;
+          color: #888888;
+          font-size: 30px;
+          cursor: pointer;
+        }
+        .button:focus{
+            outline: none;
+        }
+        .btn-xl {
+          font-size: 22px;
+          padding: 10px;
+        }
+        #signIn {
+          width: 1100px;
+          margin: 0 auto;
+        }
+      </style>
     </div>
   </div>
 
