@@ -1,7 +1,7 @@
 <navigation></navigation>
 
-<div class="container">
-  <div class="row">
+<div class="container" ng-controller="profileCtrl">
+  <div class="row" >
     
      <div class="col-md-6">
 
@@ -15,10 +15,19 @@
         <div class="form-group">
           <label class="col-sm-3 control-label">Email</label>
           <p class="form-control-static">{{ vm.user.email }}</p>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Ideas</label>
+          <p class="form-control-static">{{ vm.user.ideas }}</p>
         </div>
       </form>
-
+      <button onclick="logout()" class="btn btn-default">Logout</button>
     </div>
+
+    <script type="text/javascript">
+      function logout() {
+        console.log("reached this logout");
+      }
+    </script>
 
   </div>
 </div>
