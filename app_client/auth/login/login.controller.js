@@ -14,6 +14,7 @@
     };
 
     vm.onSubmit = function () {
+      console.log("This is the login controller");
       authentication
         .login(vm.credentials)
         .error(function(err){

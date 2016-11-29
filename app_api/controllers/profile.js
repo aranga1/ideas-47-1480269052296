@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
 module.exports.profileRead = function(req, res) {
-
+  console.log("payload is");
+  console.log(req.payload);
   if (!req.payload._id) {
     res.status(401).json({
       "message" : "UnauthorizedError: private profile"
@@ -18,16 +19,20 @@ module.exports.profileRead = function(req, res) {
 module.exports.add_idea = function(req, res) {
   console.log("got to add_idea");
   console.log(req.body);
-  if (!req.payload._id) {
+  if (!req.body.userName) {
     res.status(401).json({
-      "message" : "UnauthorizedError: private profile"
+      "message" : "UnauthorizedError: User not Validated"
     });
   } else {
-    User.findById(req.payload._id).exec(function(err, user) {
+    console.log("Got to this");
+    User.findOne({'email': req.body.userName}).exec(function(err, user) {
         if (err) {
           console.log(err);
+          res.status(401).json({
+            "message" : "UnauthorizedError: user not found"
+          });
         } else {
-          console.log("found user with id" + req.payload._id);
+          console.log("found user with id" + req.body.userName);
           var idea = {};
           idea.ideaName = req.body.ideaName;
           idea.ideaDescription = req.body.ideaDescription;
@@ -38,7 +43,7 @@ module.exports.add_idea = function(req, res) {
               console.log(err);
             }
             else {
-              res.status(200).json(user);
+              res.redirect('/profile');
             }
           });
         }
