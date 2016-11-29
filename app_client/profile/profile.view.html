@@ -20,7 +20,7 @@
           <p class="form-control-static">{{ vm.user.ideas }}</p>
         </div>
       </form>
-      <button onclick="logout()" class="btn btn-default">Logout</button>
+      <a onclick="logout()" href="/logout" class="btn btn-default btn-sm">Logout</a>
     </div>
     <form action="/api/pushIdea" method="post">
           <input type="text" placeholder="Idea name" ng-model="ideaName"></input>
@@ -30,6 +30,7 @@
 
     <script type="text/javascript">
       function logout() {
+        this.$localStorage.$reset();
         console.log("reached this logout");
       }
     </script>

@@ -17,4 +17,9 @@ router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 router.post('/pushIdea', ctrlProfile.add_idea);
 
+router.get('/logout', function(req, res) {
+    req.logOut();
+    res.redirect('/');
+});
+
 module.exports = router;
