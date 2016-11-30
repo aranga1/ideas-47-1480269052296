@@ -2,6 +2,7 @@ var mongoose = require( 'mongoose' );
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
 
+// schema of database where idea, description are saved with userID
 var userSchema = new mongoose.Schema({
   email: {
     type: String,
@@ -27,6 +28,7 @@ userSchema.methods.validPassword = function(password) {
   return this.hash === hash;
 };
 
+// allows secure transfer of user details
 userSchema.methods.generateJwt = function() {
   var expiry = new Date();
   expiry.setDate(expiry.getDate() + 7);
@@ -36,7 +38,7 @@ userSchema.methods.generateJwt = function() {
     email: this.email,
     name: this.name,
     exp: parseInt(expiry.getTime() / 1000),
-  }, "MY_SECRET"); // DO NOT KEEP YOUR SECRET IN THE CODE!
+  }, "MY_SECRET"); 
 };
 
 mongoose.model('User', userSchema);

@@ -2,7 +2,6 @@ var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
 module.exports.profileRead = function(req, res) {
-  console.log("payload is");
   console.log(req.payload);
   if (!req.payload._id) {
     res.status(401).json({
@@ -16,15 +15,15 @@ module.exports.profileRead = function(req, res) {
 
 };
 
+// function that saves idea, description with userID
 module.exports.add_idea = function(req, res) {
-  console.log("got to add_idea");
   console.log(req.body);
   if (!req.body.userName) {
     res.status(401).json({
       "message" : "UnauthorizedError: User not Validated"
     });
   } else {
-    console.log("Got to this");
+    // finds information of user by user email
     User.findOne({'email': req.body.userName}).exec(function(err, user) {
         if (err) {
           console.log(err);
@@ -32,7 +31,6 @@ module.exports.add_idea = function(req, res) {
             "message" : "UnauthorizedError: user not found"
           });
         } else {
-          console.log("found user with id" + req.body.userName);
           var idea = {};
           idea.ideaName = req.body.ideaName;
           idea.ideaDescription = req.body.ideaDescription;
@@ -43,8 +41,6 @@ module.exports.add_idea = function(req, res) {
               console.log(err);
             }
             else {
-              //res.status(200).json(result);
-              //res.json(result);
               res.redirect('/profile');
             }
           });
