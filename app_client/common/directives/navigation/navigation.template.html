@@ -8,9 +8,17 @@
       <ul class="nav navbar-nav navbar-right">
         <li ng-hide="navvm.isLoggedIn"><a href="login">Sign In</a></li>
         <li ng-show="navvm.isLoggedIn"><a href="profile">{{ navvm.currentUser.name }}</a></li>
+        <li ng-show="navvm.isLoggedIn"><a onclick="logout()" href="/logout">Logout</a></li>
+        <!--a onclick="logout()" href="/logout" class="btn btn-default btn-sm">Logout</a-->
       </ul>
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  function logout() {
+    this.$localStorage.$reset();
+    console.log("reached this logout");
+  }
+</script>
 </font>
 

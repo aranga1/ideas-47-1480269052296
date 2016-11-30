@@ -1,5 +1,5 @@
 <navigation></navigation>
-<style type="text/css">
+<!--style type="text/css">
   *{
   margin:0;
   padding:0;
@@ -91,7 +91,7 @@
   ol{text-align:center;}
   ol li{display:inline;padding-right:1em;}
   ol li a{color:#fff;}
-</style>
+</style-->
 
 <div class="container">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Rock Salt">
@@ -115,13 +115,16 @@
         </div-->
       </form>
       <ul ng-repeat="idea in vm.user.ideas">
-        <li>
+        <!--li>
           <a href="#">
             <h2>{{ idea.ideaName }}</h2>
             <p>{{ idea.ideaDescription }}</p>
-        </li>
+        </li-->
+        <label>Idea Name</label>
+        <p>{{ idea.ideaName }}</p>
+        <label>Idea Description</label>
+        <p>{{ idea.ideaDescription }}</p>
       </ul>
-      <a onclick="logout()" href="/logout" class="btn btn-default btn-sm">Logout</a>
     </div>
     <form action="/api/pushIdea" method="post">
         <div class="form-group">
@@ -130,7 +133,7 @@
         </div>
         <div class="form-group">
           <label for="description">Idea Description</label>
-          <input type="text" class="form-control" name="ideaDescription" placeholder="Enter Description" ng-model="vm.idea.ideaDescription">
+          <textarea type="text" onkeyup="adjust_textarea(this)" class="form-control" name="ideaDescription" placeholder="Enter Description" ng-model="vm.idea.ideaDescription"></textarea>
         </div>
         <div class="form-group" ng-hide="true">
           <label for="description">User Signature</label>
@@ -144,8 +147,13 @@
         this.$localStorage.$reset();
         console.log("reached this logout");
       }
+
+      function adjust_textarea(th) {
+        th.style.height = "20px";
+        th.style.height = (th.scrollHeight)+"px";
+      }
     </script>
-    <style>
+    <!--style>
         body {
           overflow: hidden;
           background-color: #FFBB00;
@@ -167,6 +175,6 @@
           width: 1100px;
           margin: 0 auto;
         }
-      </style>
+      </style-->
   </div>
 </div>
