@@ -61,7 +61,9 @@ module.exports.login = function(req, res) {
       });
     } else {
       // If user is not found
-      res.status(401).json(info);
+      res.status(401).json({
+        message: "Incorrect credentials. Please try again"
+      });
     }
   })(req, res);
 
