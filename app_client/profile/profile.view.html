@@ -1,146 +1,102 @@
 <navigation></navigation>
-<!--style type="text/css">
-  *{
-  margin:0;
-  padding:0;
+<style type="text/css">
+  .sticky {
+    /* General */
+    margin: 0 auto;
+    padding: 8px 24px;
+    left: 50px;
+    margin-right: 125px;
+    margin-bottom: 15px;
+    width: 380px;
+    right: -100px;
+    display: inline-block;
+    /* Font */
+    font-family: 'Julee';
+    font-size: 1.4em;
+    /* Border */
+    border:1px #E8Ds47 solid;
+    /* Shadow */
+    -moz-box-shadow:0px 0px 6px 1px #333333;
+    -webkit-box-shadow:0px 0px 6px 1px #333333;
+    box-shadow:0px 0px 6px 1px #333333;
+    /* Background */
+    background: #fefdca; /* Old browsers */
+    background: -moz-linear-gradient(top, #fefdca 0%, #f7f381 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefdca), color-stop(100%,#f7f381)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fefdca 0%,#f7f381 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fefdca 0%,#f7f381 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #fefdca 0%,#f7f381 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefdca', endColorstr='#f7f381',GradientType=0 ); /* IE6-9 */
+      background: linear-gradient(top, #fefdca 0%,#f7f381 100%); /* W3C; A catch-all for everything else */
   }
-  body{
-    font-family:arial,sans-serif;
-    font-size:100%;
-    margin:3em;
-    background:#666;
-    color:#fff;
+   
+  .sticky ol {
+      margin: 12px;
   }
-  h2,p{
-    font-size:100%;
-    font-weight:normal;
+   
+  .sticky p {
+      text-align: left;
+      word-wrap:break-word;
   }
-  ul,li{
-    list-style:none;
+  div button {
+
+    position: absolute;
+    right: -400px;
+    top: 210px;
   }
-  ul{
-    overflow:hidden;
-    padding:3em;
+  body {
+    background-color: #FFBB00;
+    font-family: 'Rock Salt';
+  } 
+  #regular {
+    font-size: 35px;
+    font-family:'Julee';
   }
-  ul li a{
-    text-decoration:none;
-    color:#000;
-    background:#ffc;
-    display:block;
-    height:10em;
-    width:10em;
-    padding:1em;
-    -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
-    -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-    -moz-transition:-moz-transform .15s linear;
-    -o-transition:-o-transform .15s linear;
-    -webkit-transition:-webkit-transform .15s linear;
+  #board {
+    position: absolute;
+    right: -120px;
+    top: 10px;
   }
-  ul li{
-    margin:1em;
-    float:left;
+  .btn-xl {
+    font-size: 22px;
+    padding: 10px;
   }
-  ul li h2{
-    font-size:140%;
-    font-weight:bold;
-    padding-bottom:10px;
-  }
-  ul li p{
-    font-family:"Reenie Beanie",arial,sans-serif;
-    font-size:180%;
-  }
-  ul li a{
-    -webkit-transform: rotate(-6deg);
-    -o-transform: rotate(-6deg);
-    -moz-transform:rotate(-6deg);
-  }
-  ul li:nth-child(even) a{
-    -o-transform:rotate(4deg);
-    -webkit-transform:rotate(4deg);
-    -moz-transform:rotate(4deg);
-    position:relative;
-    top:5px;
-    background:#cfc;
-  }
-  ul li:nth-child(3n) a{
-    -o-transform:rotate(-3deg);
-    -webkit-transform:rotate(-3deg);
-    -moz-transform:rotate(-3deg);
-    position:relative;
-    top:-5px;
-    background:#ccf;
-  }
-  ul li:nth-child(5n) a{
-    -o-transform:rotate(5deg);
-    -webkit-transform:rotate(5deg);
-    -moz-transform:rotate(5deg);
-    position:relative;
-    top:-10px;
-  }
-  ul li a:hover,ul li a:focus{
-    box-shadow:10px 10px 7px rgba(0,0,0,.7);
-    -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
-    -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
-    -webkit-transform: scale(1.25);
-    -moz-transform: scale(1.25);
-    -o-transform: scale(1.25);
-    position:relative;
-    z-index:5;
-  }
-  ol{text-align:center;}
-  ol li{display:inline;padding-right:1em;}
-  ol li a{color:#fff;}
-</style-->
+
+</style>
 
 <div class="container">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Rock Salt">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Julee">
   <div class="row" >
      <div class="col-md-6"><br><br>
-      <h1>Eureka!</h1><br><br>
-      <form  class="form-horizontal">
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Full name</label>
-          <p class="form-control-static">{{ vm.user.name }}</p>
-        </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Email</label>
-          <p class="form-control-static">{{ vm.user.email }}</p>
-        <!--div class="form-group" ng-repeat="idea in vm.user.ideas">
-          <label class="col-sm-3 control-label">Idea Name</label>
-          <p class="form-control-static">{{ idea.ideaName }}</p>
-          <label class="col-sm-3 control-label">Idea Description</label>
-          <p class="form-control-static">{{ idea.ideaDescription }}</p>
-        </div-->
-      </form>
-      <ul ng-repeat="idea in vm.user.ideas">
-        <!--li>
-          <a href="#">
-            <h2>{{ idea.ideaName }}</h2>
-            <p>{{ idea.ideaDescription }}</p>
-        </li-->
-        <label>Idea Name</label>
-        <p>{{ idea.ideaName }}</p>
-        <label>Idea Description</label>
-        <p>{{ idea.ideaDescription }}</p>
-      </ul>
-    </div>
-    <form action="/api/pushIdea" method="post">
-        <div class="form-group">
+      <h1 id="board">Idea Board:</h1><br><br><br>
+      <form action="/api/pushIdea" method="post">
+        <div class="form-group" id="regular">
           <label for="name">Idea Name</label>
           <input type="text" class="form-control" name="ideaName" placeholder="Enter Idea Name" ng-model="vm.idea.ideaName">
         </div>
-        <div class="form-group">
+        <div class="form-group" id="regular">
           <label for="description">Idea Description</label>
-          <textarea type="text" onkeyup="adjust_textarea(this)" class="form-control" name="ideaDescription" placeholder="Enter Description" ng-model="vm.idea.ideaDescription"></textarea>
+          <textarea type="text" onkeyup="adjust_textarea(this)" class="form-control" name="ideaDescription" placeholder="Enter Description (max 170 Chars)" maxlength="170" ng-model="vm.idea.ideaDescription"></textarea>
         </div>
         <div class="form-group" ng-hide="true">
           <label for="description">User Signature</label>
           <input type="text" class="form-control" readonly name="userName" value="{{vm.user.email}}" placeholder="{{vm.user.email}}">
         </div>
-        <button type="submit" class="btn btn-default">Add!</button>
+        <button type="submit" class="btn btn-default btn-xl" style="float: right">Add Idea</button>
       </form>
+      <br>
+      
+      <div class="row" ng-repeat="idea in vm.user.ideas">
+        <div class="sticky col-sm-4">
+          <p>name:</p>
+          <p>{{ idea.ideaName }}</p>
+          <p>about:</p>
+          <p>{{ idea.ideaDescription }}</p>
+        </div>
+      </div>
+</div>
+    
 
     <script type="text/javascript">
       function logout() {
