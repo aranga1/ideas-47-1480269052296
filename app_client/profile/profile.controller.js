@@ -31,17 +31,6 @@
         console.log(data);
       });
     };
-    /*vm.logout = function () {
-      console.log("logout pressed");
-      authentication
-        .logout()
-        .error(function(err){
-          alert(err);
-        })
-        .then(function(){
-          $location.path('/');
-        });
-    };*/
   }
 
 })();

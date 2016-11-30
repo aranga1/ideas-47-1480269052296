@@ -1,7 +1,7 @@
 /*
 
-  There are some minor modifications to the default Express setup
-  Each is commented and marked with [SH] to make them easy to find
+  minor modifications to the default Express setup are
+  marked with [SH] 
 
  */
 
