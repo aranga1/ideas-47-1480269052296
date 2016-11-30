@@ -1,6 +1,6 @@
 (function () {
 
-  angular.module('meanApp', ['ngRoute']);
+  angular.module('EurekaApp', ['ngRoute']);
 
   function config ($routeProvider, $locationProvider) {
     $routeProvider

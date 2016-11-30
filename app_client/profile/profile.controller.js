@@ -1,7 +1,7 @@
 (function() {
   
   angular
-    .module('meanApp')
+    .module('EurekaApp')
     .controller('profileCtrl', profileCtrl);
 
   profileCtrl.$inject = ['$location', '$scope', 'meanData', 'authentication'];

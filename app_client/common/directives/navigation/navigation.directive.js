@@ -1,7 +1,7 @@
 (function () {
 
   angular
-    .module('meanApp')
+    .module('EurekaApp')
     .directive('navigation', navigation);
 
   function navigation () {
