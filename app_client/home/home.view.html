@@ -17,11 +17,16 @@
   <a href="register" id="reg" style="margin-left:850px">Register</a>
 
   <style>
+  html {
+    position: relative;
+    min-height: 100%;
+  }
   body {
   	overflow: hidden;
     background-color: #FFBB00;
     font-family: 'Rock Salt';
-
+    height: 100%;
+    margin-bottom: 30px;
   } 
   h1 {
   	text-align: center;
@@ -43,8 +48,23 @@
   	font-size: 30px;
   	text-decoration: none;
   }
+  .footer {
+    background-color: #FFBB00;
+    color: black;
+    font-size: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+  }
   </style>
   
 </div>
+<footer class="footer">
+  <div layout="row" layout-align="center center" flex>
+    Made with <img src="heart1.png" style="width:30px;height:30px;" /> by Eehita Parameswaran and Aakash Ranga
+  </div>
+</footer>
 </body>
 </html>
